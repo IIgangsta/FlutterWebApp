@@ -22,7 +22,7 @@
         </intent>
     </queries>
     <application
-        android:label="FlutterWebApp"
+        android:label="Навигатор ДО"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
