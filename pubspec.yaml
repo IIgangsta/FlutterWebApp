@@ -35,3 +35,5 @@ flutter_native_splash:
 
 flutter:
   uses-material-design: true
+dependency_overrides:
+  webview_flutter_wkwebview: 3.25.0
