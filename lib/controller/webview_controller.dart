@@ -106,6 +106,28 @@ class WebViewerController extends GetxController {
             currentTitle.value = title;
           }
 
+          // Inject viewport + CSS fixes for tables and wide content
+          try {
+            await controller.runJavaScript('''
+(function() {
+  var meta = document.querySelector('meta[name=viewport]');
+  if (!meta) {
+    meta = document.createElement('meta');
+    meta.name = 'viewport';
+    document.head.appendChild(meta);
+  }
+  meta.setAttribute('content', 'width=device-width, initial-scale=1');
+
+  var s = document.createElement('style');
+  s.textContent = 'body{overflow-x:hidden!important}'
+    + 'table{width:100%!important;table-layout:fixed!important;word-break:break-word!important}'
+    + 'td,th{overflow-wrap:break-word!important}'
+    + 'img,video{max-width:100%!important;height:auto!important}';
+  document.head.appendChild(s);
+})();
+''');
+          } catch (_) {}
+
           // Update history flags
           await _updateHistoryState();
         },
