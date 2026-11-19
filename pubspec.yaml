@@ -15,7 +15,7 @@ dependencies:
   url_launcher: ^6.3.2
   get: ^4.7.3
   connectivity_plus: ^7.3.2
-  share_plus: ^10.1.2
+  share_plus: ^11.0.0
 
 dev_dependencies:
   flutter_test:
