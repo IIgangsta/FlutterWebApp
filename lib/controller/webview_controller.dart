@@ -203,12 +203,7 @@ class WebViewerController extends GetxController {
     final urlToShare = currentUrl.value.isNotEmpty ? currentUrl.value : url;
     final title =
         currentTitle.value.isNotEmpty ? currentTitle.value : AppConfig.appName;
-    await SharePlus.instance.share(
-      ShareParams(
-        text: urlToShare,
-        subject: title,
-      ),
-    );
+    await Share.share(urlToShare, subject: title);
   }
 
   Future<void> copyCurrentUrl() async {
