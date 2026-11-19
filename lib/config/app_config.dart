@@ -1,6 +1,6 @@
 class AppConfig {
-  static const String appName = 'Flutter Web App';
-  static const String initialUrl = 'https://flutter.dev';
+  static const String appName = 'Навигатор ДО';
+  static const String initialUrl = 'https://dop.edu.orb.ru/';
   static const bool enablePullToRefresh = true;
   static const bool enableDoubleTapExit = true;
   static const Duration doubleTapExitDuration = Duration(seconds: 2);
